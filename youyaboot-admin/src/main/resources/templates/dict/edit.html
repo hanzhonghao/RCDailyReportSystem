@@ -1,0 +1,90 @@
+<!--
+代码为自动生成 Created by www.magicalcoder.com
+ 软件作者：何栋宇 qq:709876443
+ 如果你改变了此类 read 请将此行删除
+ 欢迎加入官方QQ群:648595928
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:include="magicalcoder/v103/include/head :: commonHead('字典编辑')"/>
+
+<body class="childrenBody layui-hide">
+<!--请不要删除magicaldrag注释标签，可以配合布局器进行联动布局-->
+<!--magicaldrag-->
+    <div class="layui-fluid">
+        <div class="layui-card">
+            <div class="layui-card-header">
+
+            </div>
+            <div class="layui-card-body">
+                <form class="layui-form">
+                    <div class="layui-form-item security_edit_form_param_id">
+                        <label class="layui-form-label">主键</label>
+                        <div class="layui-input-block">
+                            <input type="text" disabled="true" class="layui-input" name="id"  placeholder="主键自动生成，无需手动编辑,如果重置则变成增加数据"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_dictCategory">
+                        <label class="layui-form-label">字典大类</label>
+                        <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="dictCategory" placeholder="字典大类" lay-verify="magicalCoderVerify|mc_required" magicalcoder-verify="|minLength=0" value="" />
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_code">
+                        <label class="layui-form-label">编码</label>
+                        <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="code" placeholder="编码" lay-verify="magicalCoderVerify|mc_required" magicalcoder-verify="|minLength=0" value="" />
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_name">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="name" placeholder="名称" lay-verify="magicalCoderVerify|mc_required" magicalcoder-verify="|minLength=0" value="" />
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_dictDescription">
+                        <label class="layui-form-label">描述</label>
+                        <div class="layui-input-block">
+                        <textarea name="dictDescription" placeholder="描述" class="layui-textarea" lay-verify="magicalCoderVerify" magicalcoder-verify="|minLength=0" ></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_parentId">
+                        <label class="layui-form-label">所属父类</label>
+                        <div class="layui-input-block">
+                        <select name="parentId"  data-url="admin/dict_rest/search" data-id="id" data-text-fields="code" class="magicalcoder-foreign-select2 layui-input" lay-ignore="true" lay-verify="magicalCoderVerify" magicalcoder-verify="|minLength=0" data-value=""  placeholder="所属父类" data-limit="20"><option value=""></option></select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_createTime">
+                        <label class="layui-form-label">创建时间</label>
+                        <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="createTime" placeholder="创建时间" lay-verify="magicalCoderVerify|mc_required" magicalcoder-verify="|minLength=0" value="" />
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_updateTime">
+                        <label class="layui-form-label">更新时间</label>
+                        <div class="layui-input-block">
+                        <input type="text" class="layui-input" name="updateTime" placeholder="更新时间" lay-verify="magicalCoderVerify|mc_required" magicalcoder-verify="|minLength=0" value="" />
+                        </div>
+                    </div>
+                    <div class="layui-form-item security_edit_form_param_orderNo">
+                        <label class="layui-form-label">序号</label>
+                        <div class="layui-input-block">
+                        <select name="orderNo" class="layui-input" lay-verify="magicalCoderVerify" magicalcoder-verify="|minLength=0"  placeholder="序号">
+                        </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item ">
+                        <div class="layui-input-block">
+                            <a class="layui-btn security_edit_form_operate_save" lay-submit="" lay-filter="save">立即提交</a>
+                            <button type="reset" class="layui-hide layui-btn layui-btn-primary" >重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!--/magicaldrag-->
+    <div th:replace="magicalcoder/v103/include/main-js :: commonMain" />
+    <script type="text/javascript"  th:src="@{/assets/admin/dict/edit.js}"></script>
+</body>
+</html>
