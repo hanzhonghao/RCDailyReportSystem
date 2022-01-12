@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="commonHeader" class="layui-header header">
 	<div class="layui-main mag0">
-		<a href="#" class="logo">重庆市荣昌妇幼信息科</a>
+		<a href="#" class="logo">荣昌妇幼信息科</a>
 		<!-- 显示/隐藏菜单 -->
 		<a href="javascript:;" class="seraph hideMenu icon-caidan">
             <i class="layui-icon layui-icon-shrink-right" ></i>
         </a>
 		<ul class="layui-nav mobileTopLevelMenus" mobile="mobile">
 			<li class="layui-nav-item" data-menu="contentManagement">
-				<a href="javascript:;"><i class="seraph icon-caidan"></i><cite>荣昌妇幼信息科</cite></a>
+				<a href="javascript:;"><i class="seraph icon-caidan"></i><cite>重庆市荣昌妇幼信息科</cite></a>
 				<dl  class="layui-nav-child" >
 					<dd th:each="item,itemStat : ${categoryList}" th:class="${itemStat.index==0}? 'layui-this' : ''" th:attr="data-menu=${item.id}"><a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite th:text="${item.moduleCategoryName}"/></a></dd>
 				</dl>
